@@ -6,6 +6,7 @@ import modelo.Operador;
 import vista.Login;
 import controlador.Control;
 import vista.General;
+import vista.GenerarBoleta;
 
 public class Main {
     
@@ -15,7 +16,8 @@ public class Main {
     Operador opera = new Operador();
      Login login = new Login();
     General general = new General();
-    Control controlador = new Control(cliente,opera,login,general);
+    GenerarBoleta generarBoleta = new GenerarBoleta();
+    Control controlador = new Control(cliente,opera,login,general,generarBoleta);
     controlador.start();
     }
     
