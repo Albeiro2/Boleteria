@@ -2,6 +2,6 @@
 package modelo;
 
 
-public class Persona {
+public class Cliente {
     
 }

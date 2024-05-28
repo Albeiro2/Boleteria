@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 
 public class Conexion {
     
- public static final String URL = "jdbc:mysql://localhost:3306/productos?autoReconnet=true&useSSL=false";
+ public static final String URL = "jdbc:mysql://localhost:3306/boleteria?autoReconnet=true&useSSL=false";
  public static final String usuario = "root";
  public static final String contra = "12345";
  
