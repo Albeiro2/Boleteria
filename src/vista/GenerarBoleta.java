@@ -26,21 +26,208 @@ public class GenerarBoleta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        generarBoletoAntiguo = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        cajaNombrePrimer = new javax.swing.JTextField();
+        cajaTelefonoPrimer = new javax.swing.JTextField();
+        cajaCorreoPrimer = new javax.swing.JTextField();
+        generarBoletoPrimer = new javax.swing.JButton();
+        boletoAntiguo = new javax.swing.JLabel();
+        boletoNuevo = new javax.swing.JLabel();
+        limpiarAntiguo = new javax.swing.JButton();
+        limpiarNuevo = new javax.swing.JButton();
+        atrasGenerarBoletas = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic", 2, 36)); // NOI18N
+        jLabel1.setText("Genera boletas para primer participante");
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic", 2, 36)); // NOI18N
+        jLabel2.setText("Genera boletas para participantes antiguos");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("Ingresa el correo del participante:");
+
+        generarBoletoAntiguo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        generarBoletoAntiguo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/impresora.png"))); // NOI18N
+        generarBoletoAntiguo.setText("Generar boleta");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("Nombre:");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("Telefono:");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("Correo:");
+
+        cajaNombrePrimer.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        cajaTelefonoPrimer.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        cajaCorreoPrimer.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cajaCorreoPrimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cajaCorreoPrimerActionPerformed(evt);
+            }
+        });
+
+        generarBoletoPrimer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        generarBoletoPrimer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/impresora.png"))); // NOI18N
+        generarBoletoPrimer.setText("Generar boleta");
+
+        boletoAntiguo.setBackground(new java.awt.Color(0, 0, 0));
+        boletoAntiguo.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        boletoAntiguo.setForeground(new java.awt.Color(255, 51, 0));
+        boletoAntiguo.setText("Aqui va la boleta");
+
+        boletoNuevo.setBackground(new java.awt.Color(0, 0, 0));
+        boletoNuevo.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        boletoNuevo.setForeground(new java.awt.Color(255, 51, 0));
+        boletoNuevo.setText("Aqui va la boleta");
+
+        limpiarAntiguo.setBackground(new java.awt.Color(255, 255, 0));
+        limpiarAntiguo.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        limpiarAntiguo.setForeground(new java.awt.Color(0, 153, 204));
+        limpiarAntiguo.setText("Refres");
+
+        limpiarNuevo.setBackground(new java.awt.Color(255, 255, 0));
+        limpiarNuevo.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        limpiarNuevo.setForeground(new java.awt.Color(0, 153, 204));
+        limpiarNuevo.setText("Refres");
+
+        atrasGenerarBoletas.setBackground(new java.awt.Color(255, 255, 0));
+        atrasGenerarBoletas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        atrasGenerarBoletas.setForeground(new java.awt.Color(0, 51, 255));
+        atrasGenerarBoletas.setText("Volver");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(atrasGenerarBoletas, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(241, 241, 241))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(56, 56, 56)
+                                .addComponent(limpiarAntiguo)
+                                .addGap(82, 82, 82))))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(cajaNombrePrimer, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cajaTelefonoPrimer, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(cajaCorreoPrimer, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(388, 388, 388)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField1)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(448, 448, 448)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(boletoAntiguo)
+                            .addComponent(generarBoletoAntiguo))))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(447, 447, 447)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(boletoNuevo)
+                    .addComponent(generarBoletoPrimer))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(limpiarNuevo)
+                .addGap(69, 69, 69))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(atrasGenerarBoletas, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(limpiarAntiguo)))
+                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(generarBoletoAntiguo)
+                .addGap(37, 37, 37)
+                .addComponent(boletoAntiguo)
+                .addGap(40, 40, 40)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(cajaNombrePrimer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaTelefonoPrimer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaCorreoPrimer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(generarBoletoPrimer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(boletoNuevo)
+                    .addComponent(limpiarNuevo))
+                .addGap(14, 14, 14))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cajaCorreoPrimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaCorreoPrimerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaCorreoPrimerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +265,24 @@ public class GenerarBoleta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton atrasGenerarBoletas;
+    public javax.swing.JLabel boletoAntiguo;
+    public javax.swing.JLabel boletoNuevo;
+    public javax.swing.JTextField cajaCorreoPrimer;
+    public javax.swing.JTextField cajaNombrePrimer;
+    public javax.swing.JTextField cajaTelefonoPrimer;
+    public javax.swing.JButton generarBoletoAntiguo;
+    public javax.swing.JButton generarBoletoPrimer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    public javax.swing.JTextField jTextField1;
+    public javax.swing.JButton limpiarAntiguo;
+    public javax.swing.JButton limpiarNuevo;
     // End of variables declaration//GEN-END:variables
 }

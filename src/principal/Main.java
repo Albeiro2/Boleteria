@@ -5,6 +5,7 @@ import modelo.Cliente;
 import modelo.Operador;
 import vista.Login;
 import controlador.Control;
+import vista.General;
 
 public class Main {
     
@@ -13,8 +14,8 @@ public class Main {
      Cliente cliente = new Cliente();
     Operador opera = new Operador();
      Login login = new Login();
-    
-    Control controlador = new Control(cliente,opera,login);
+    General general = new General();
+    Control controlador = new Control(cliente,opera,login,general);
     controlador.start();
     }
     

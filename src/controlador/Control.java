@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
 import modelo.Operador;
+import vista.General;
 import vista.Login;
 
 public class Control implements ActionListener {
@@ -13,12 +14,12 @@ public class Control implements ActionListener {
     private Cliente cliente;
     private Operador opera;
     private Login login;
-
-    public Control(Cliente cliente, Operador opera, Login login) {
+    private General general;
+    public Control(Cliente cliente, Operador opera, Login login,General general) {
         this.cliente = cliente;
         this.opera = opera;
         this.login = login;
-        
+        this.general = general;
         login.botonIniciar.addActionListener(this);
     }
     
@@ -41,6 +42,8 @@ public class Control implements ActionListener {
         if((!user.equals("")) && !pass.equals("")){
             if(opera.iniciarSesion(user, pass)){
                 JOptionPane.showMessageDialog(null,"Sesion Iniciada");
+                login.dispose();
+                general.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
             }
@@ -50,6 +53,7 @@ public class Control implements ActionListener {
     public void start(){
         login.setVisible(true);
         login.setLocationRelativeTo(null);
+        general.setLocationRelativeTo(null);
     }
     
 }
