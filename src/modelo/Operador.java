@@ -9,10 +9,10 @@ public class Operador {
     
     PreparedStatement ps;
     ResultSet rs;
-    Conexion con = new Conexion();
+    
     
     public boolean iniciarSesion(String usuario, String contrasena){
-        
+        Conexion con = new Conexion();
        boolean correcto = false;
         try {
             Connection conexion = con.getConnection();
@@ -32,6 +32,7 @@ public class Operador {
     
     public boolean comprobarExistencia(String correo,Cliente cliente){
         boolean existe = false;
+         Conexion con = new Conexion();
         
         try {
             Connection conexion = con.getConnection();
@@ -53,7 +54,8 @@ public class Operador {
     
     public boolean codigoRepetido(String codigo){
          boolean repetido = false;
-        
+         Conexion con = new Conexion();
+         
         try {
             Connection conexion = con.getConnection();
             ps = conexion.prepareStatement("select codigo from codigo where codigo = ?");
@@ -73,7 +75,7 @@ public class Operador {
     }
     
     public void generarCodigoAntiguo(String codigo,Cliente cliente){
-        
+         Conexion con = new Conexion();
         try {
             Connection conexion = con.getConnection();
             ps = conexion.prepareStatement("update cliente set codigo = ? where id_cliente = ?");
@@ -100,6 +102,44 @@ public class Operador {
             ps.executeUpdate();
         } catch (Exception e) {
             System.err.println(e);
+        }
+    }
+    
+    public void generarCodigoPrimer(Cliente cliente){
+         Conexion con = new Conexion();
+        try {
+            Connection conexion = con.getConnection();
+            ps = conexion.prepareStatement("insert into cliente(nombre,correo,telefono,acompanantes,codigo) values(?,?,?,?,?)");
+            ps.setString(1, cliente.getNombre());
+            ps.setString(2, cliente.getCorreo());
+            ps.setString(3, cliente.getTelefono());
+            ps.setInt(4, cliente.getAcompanantes());
+            ps.setString(5, cliente.getCodigo());
+            ps.executeUpdate();
+            
+            conexion.close();
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }
+    
+    public boolean codgioYagenerado(Cliente cliente){
+        boolean disponible = false;
+        Conexion con = new Conexion();
+        
+        try {
+            Connection conexion = con.getConnection();
+            ps = conexion.prepareStatement("select disponible from cliente where id_cliente = ?");
+            ps.setInt(1, cliente.getId());
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                disponible = rs.getBoolean(1);
+            }
+            return disponible;
+        } catch (Exception e) {
+            System.err.println(e);
+            return disponible;
         }
     }
 }

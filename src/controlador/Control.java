@@ -1,6 +1,7 @@
 
 package controlador;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -27,6 +28,9 @@ public class Control implements ActionListener {
         login.botonIniciar.addActionListener(this);
         generarBoleta.generarBoletoAntiguo.addActionListener(this);
         general.botonGenerarBoleta.addActionListener(this);
+        generarBoleta.generarBoletoPrimer.addActionListener(this);
+        generarBoleta.limpiarAntiguo.addActionListener(this);
+        generarBoleta.limpiarNuevo.addActionListener(this);
     }
     
     
@@ -45,7 +49,21 @@ public class Control implements ActionListener {
         
         if(e.getSource() == general.botonGenerarBoleta){
             general.setVisible(false);
+            refrescarAntiguo();
+            refrescarNuevo();
             generarBoleta.setVisible(true);
+        }
+        
+        if(e.getSource() == generarBoleta.generarBoletoPrimer){
+            generarBoletoPrimer();
+        }
+        
+        if(e.getSource() == generarBoleta.limpiarAntiguo){
+            refrescarAntiguo();
+        }
+        
+        if(e.getSource() == generarBoleta.limpiarNuevo){
+            refrescarNuevo();
         }
     }
     
@@ -83,13 +101,17 @@ public class Control implements ActionListener {
         if(!correo.equals("") && !campo2.equals("")){
             Cliente cliente = new Cliente();
             if(opera.comprobarExistencia(correo,cliente)){
-                do{
+                if(!opera.codgioYagenerado(cliente)){
+                    do{
                     codigo = generarCodigo();
                 }while(opera.codigoRepetido(codigo));
                 cliente.setAcompanantes(acompanantes);
                 opera.generarCodigoAntiguo(codigo, cliente);
+                generarBoleta.boletoAntiguo.setVisible(true);
                 generarBoleta.boletoAntiguo.setText("Boleta: "+codigo);
-                System.out.println("peeeee");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Este participante ya tiene una boleta disponible");
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "Este parcipante no esta registrado en eventos anteriores");
             }
@@ -98,9 +120,42 @@ public class Control implements ActionListener {
         }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Puede que algun valor en los campos este incorrecto o vacio");
+        }   
+    }
+    
+    private void generarBoletoPrimer(){
+        Cliente cliente;
+        String codigo;
+        try {
+            cliente = new Cliente();
+            cliente.setNombre(generarBoleta.cajaNombrePrimer.getText());
+            cliente.setCorreo(generarBoleta.cajaCorreoPrimer.getText());
+            cliente.setTelefono(generarBoleta.cajaTelefonoPrimer.getText());
+            cliente.setAcompanantes(Integer.parseInt(generarBoleta.cajaAcompaNuevo.getText()));
+            
+            if(cliente.getNombre().equals("") || cliente.getCorreo().equals("") || cliente.getTelefono().equals("")){
+                JOptionPane.showMessageDialog(null, "Asegurese de llenar todos los campos");
+            }else{
+                if(opera.comprobarExistencia(cliente.getCorreo(), cliente)){
+                    JOptionPane.showMessageDialog(null, "Este participante ya esta registrado en eventos anteriores");
+                }else{
+                    do{
+                        codigo = generarCodigo();
+                    }while(opera.codigoRepetido(codigo));
+                    cliente.setCodigo(codigo);
+                    opera.generarCodigoPrimer(cliente);
+                    generarBoleta.boletoNuevo.setVisible(true);
+                    generarBoleta.boletoNuevo.setText("Booleta: "+codigo);
+                }
+            }
+            
+            
+        } catch (Exception e) {
+            System.err.println(e);
+            JOptionPane.showMessageDialog(null, "¡Cantidad de acompañantes no valido!");
         }
         
-
+        
     }
     
      public String generarCodigo() {
@@ -115,5 +170,21 @@ public class Control implements ActionListener {
 
         return codigo.toString();
     }
+     
+   public void refrescarAntiguo(){
+       generarBoleta.boletoAntiguo.setVisible(false);
+       generarBoleta.boletoAntiguo.setText("");
+       generarBoleta.cajaCorreoAntiguo.setText(null);
+       generarBoleta.cajaAcompaAntiguo.setText(null);
+   }
+   
+   public void refrescarNuevo(){
+       generarBoleta.boletoNuevo.setVisible(false);
+       generarBoleta.boletoNuevo.setText("");
+       generarBoleta.cajaCorreoPrimer.setText(null);
+       generarBoleta.cajaAcompaNuevo.setText(null);
+       generarBoleta.cajaNombrePrimer.setText(null);
+       generarBoleta.cajaTelefonoPrimer.setText(null);
+   }
     
 }
