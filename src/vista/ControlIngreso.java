@@ -26,17 +26,198 @@ public class ControlIngreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaControl = new javax.swing.JTable();
+        botonBuscarBoleta = new javax.swing.JButton();
+        contadorPorIngresar = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        cajaBuscarBoleta = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        botonRefrescar = new javax.swing.JButton();
+        botonDarIngreso = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        etNombre = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        etCodigo = new javax.swing.JLabel();
+        etAcompa = new javax.swing.JLabel();
+        etEntrada = new javax.swing.JLabel();
+        etId = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tablaControl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nombre", "Codigo", "correo", "Acompañantes", "DIsponible"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaControl);
+
+        botonBuscarBoleta.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        botonBuscarBoleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa.png"))); // NOI18N
+        botonBuscarBoleta.setText("Buscar");
+
+        contadorPorIngresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        contadorPorIngresar.setText("---");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 0, 24)); // NOI18N
+        jLabel3.setText("Por ingresar:");
+
+        cajaBuscarBoleta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setText("Boleta:");
+
+        botonRefrescar.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        botonRefrescar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cargando-flechas.png"))); // NOI18N
+        botonRefrescar.setText("Refescar");
+
+        botonDarIngreso.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        botonDarIngreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ingresar.png"))); // NOI18N
+        botonDarIngreso.setText("Dar ingreso");
+        botonDarIngreso.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        jLabel2.setText("Nombre:");
+
+        etNombre.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        etNombre.setText("Albeiro Baena Tovar");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        jLabel6.setText("Codigo:");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        jLabel7.setText("Acompañantes:");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        jLabel8.setText("Entreda:");
+
+        etCodigo.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        etCodigo.setText("96g54");
+
+        etAcompa.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        etAcompa.setText("0");
+
+        etEntrada.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        etEntrada.setText("Disponible");
+
+        etId.setText("id");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(botonDarIngreso)
+                        .addGap(413, 413, 413))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(etEntrada)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(139, 139, 139)
+                                .addComponent(jLabel6)
+                                .addGap(107, 107, 107)
+                                .addComponent(jLabel7)
+                                .addGap(119, 119, 119)
+                                .addComponent(jLabel8)))
+                        .addGap(112, 112, 112))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(151, 151, 151)
+                .addComponent(etNombre)
+                .addGap(120, 120, 120)
+                .addComponent(etCodigo)
+                .addGap(195, 195, 195)
+                .addComponent(etAcompa)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(etId)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(207, 207, 207))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(cajaBuscarBoleta, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(botonBuscarBoleta)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(203, 203, 203)
+                                .addComponent(contadorPorIngresar)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                                .addComponent(botonRefrescar)
+                                .addGap(32, 32, 32))))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cajaBuscarBoleta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonBuscarBoleta)
+                            .addComponent(jLabel4)
+                            .addComponent(botonRefrescar)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(contadorPorIngresar)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(etId)
+                        .addGap(34, 34, 34)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etNombre)
+                    .addComponent(etCodigo)
+                    .addComponent(etAcompa)
+                    .addComponent(etEntrada))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(botonDarIngreso)
+                .addGap(28, 28, 28))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,5 +259,24 @@ public class ControlIngreso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton botonBuscarBoleta;
+    public javax.swing.JButton botonDarIngreso;
+    public javax.swing.JButton botonRefrescar;
+    public javax.swing.JTextField cajaBuscarBoleta;
+    public javax.swing.JLabel contadorPorIngresar;
+    public javax.swing.JLabel etAcompa;
+    public javax.swing.JLabel etCodigo;
+    public javax.swing.JLabel etEntrada;
+    private javax.swing.JLabel etId;
+    public javax.swing.JLabel etNombre;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable tablaControl;
     // End of variables declaration//GEN-END:variables
 }
